@@ -4,32 +4,9 @@
                       --------------------
 
 
-pyqscore is a (not so) ugly python script to parse OpenArena/Quake 3 log 
-files, work out some game statistics, and output them to a nice looking 
-HTML file. It supports FFA and CTF, although other game types should work
-equally well.
-
-
-ONCE UPON A TIME
-
-I tried two other tools before pyqscore, but they didn't quite satisfy me.
-The first one, vsp, is a closed-source, over-engineered piece of crap that
-requires you to install sql and apache to work. Screw that. Besides, some
-numbers from vsp are just stupid. qscore (http://qscore.sourceforge.net/)
-almost did it: free, simple, unixy and with a lot of options; but I wanted
-something that would display a half-nice HTML rather than a bare bones
-one. So I initially wrote a python script to call qscore and use its
-output to write a pdf file via latex. All good until I discovered some odd
-figures coming from qscore. Since I'm a psycopath but don't know C, I
-wrote pyqscore instead of fixing qscore, from which I took some ideas.
-And the name.
-
-Observation: parsing log files to work out game statistics is a broken
-business. The game itself should do this, as some mods already do,
-like ufreeze or AfterShock. Statistics gathered in-game are unaffected to
-errors in the log, they can (as fas as I know) keep track of each client
-more accurately, and they can offer richer information (e.g. accuracy data
-for each weapon).
+pyqscore is a python script to parse OpenArena/Quake 3 log files, work out 
+some game statistics, and output them to a nice looking HTML file. It supports 
+FFA and CTF, although other game types should work equally well.
 
 
 USAGE:
@@ -147,6 +124,24 @@ process to taste from any language known to humanity.
 - The look of the displayed HTML can be trivially modified by editing
   the CSS file
 
+- I did a map once, check it out:
+
+  https://www.youtube.com/watch?v=LoCGdOkqtps
+
+
+ONCE UPON A TIME
+
+I tried two other tools before pyqscore, but they didn't quite satisfy me.
+qscore (http://qscore.sourceforge.net/) almost did it: free, simple, unixy and with a lot of options; but I wanted something that would display a half-nice HTML rather than a bare bones one. So I initially wrote a python script to call qscore and use its output to write a pdf file via latex. All good until I discovered some odd figures coming from qscore. So instead of fixing qscore I
+wrote this and nicked the name.
+
+Observation: parsing log files to work out game statistics is a broken
+business. The game itself should do this, as some mods already do,
+like ufreeze or AfterShock. Statistics gathered in-game are unaffected to
+errors in the log, they can (as fas as I know) keep track of each client
+more accurately, and they can offer richer information (e.g. accuracy data
+for each weapon).
+
 
 THANKS TO
 
@@ -161,10 +156,3 @@ The OpenArena team for a) the game, b) the icons I nicked.
 COPYING
 
 GNU Public License version 2. See file 'COPYING'.
-
-
-HARASSMENT
-
-I can be contacted via the Rainbow Networks forum:
-
-http://rainbow.furver.se/
