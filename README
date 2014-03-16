@@ -132,8 +132,12 @@ process to taste from any language known to humanity.
 ONCE UPON A TIME
 
 I tried two other tools before pyqscore, but they didn't quite satisfy me.
-qscore (http://qscore.sourceforge.net/) almost did it: free, simple, unixy and with a lot of options; but I wanted something that would display a half-nice HTML rather than a bare bones one. So I initially wrote a python script to call qscore and use its output to write a pdf file via latex. All good until I discovered some odd figures coming from qscore. So instead of fixing qscore I
-wrote this and nicked the name.
+qscore (http://qscore.sourceforge.net/) almost did it: free, simple, unixy 
+and with a lot of options; but I wanted something that would display a 
+half-nice HTML rather than a bare bones one. So I initially wrote a python 
+script to call qscore and use its output to write a pdf file via latex. All 
+good until I discovered some odd figures coming from qscore. So instead of 
+fixing qscore I wrote this and nicked the name.
 
 Observation: parsing log files to work out game statistics is a broken
 business. The game itself should do this, as some mods already do,
