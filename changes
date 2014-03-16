@@ -1,0 +1,14 @@
+16/03/2014
+
+- Refactored all the code to make it nicer to look at it.
+
+- Added a Tkinter file dialog to make it super simple to run.
+
+- Included the suggestions I was given in the forum.
+
+- Discovered and fixed some bugs (probably adding  others in the process)
+
+- Exotic nick names should be parsed properly now
+
+- Created a sensible dir structure to put html files into automatically
+

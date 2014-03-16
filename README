@@ -1,0 +1,170 @@
+
+                      --------------------
+                     |       pyqscore     |
+                      --------------------
+
+
+pyqscore is a (not so) ugly python script to parse OpenArena/Quake 3 log 
+files, work out some game statistics, and output them to a nice looking 
+HTML file. It supports FFA and CTF, although other game types should work
+equally well.
+
+
+ONCE UPON A TIME
+
+I tried two other tools before pyqscore, but they didn't quite satisfy me.
+The first one, vsp, is a closed-source, over-engineered piece of crap that
+requires you to install sql and apache to work. Screw that. Besides, some
+numbers from vsp are just stupid. qscore (http://qscore.sourceforge.net/)
+almost did it: free, simple, unixy and with a lot of options; but I wanted
+something that would display a half-nice HTML rather than a bare bones
+one. So I initially wrote a python script to call qscore and use its
+output to write a pdf file via latex. All good until I discovered some odd
+figures coming from qscore. Since I'm a psycopath but don't know C, I
+wrote pyqscore instead of fixing qscore, from which I took some ideas.
+And the name.
+
+Observation: parsing log files to work out game statistics is a broken
+business. The game itself should do this, as some mods already do,
+like ufreeze or AfterShock. Statistics gathered in-game are unaffected to
+errors in the log, they can (as fas as I know) keep track of each client
+more accurately, and they can offer richer information (e.g. accuracy data
+for each weapon).
+
+
+USAGE:
+
+1. Install Python (tested with 2.7)
+
+2a.In Windows, double-clicking on pyqscore.py should open a file dialog.
+   Choose a log file. These live in the baseoa dir, something like:
+
+   C:\Documents and settings\username\Application data\OpenArena\baseoa\games.log
+
+   or perhaps:
+
+   C:\Users\username\Appdata\Roaming\OpenArena\baseoa\games.log
+
+   If everything went well you should see the results on a browser window.
+
+2b.I don't know how to persuade Linux to launch Python scripts with a
+   double click. Just open a terminal and run:
+
+   python pyqscore.py path-to-log-file
+
+
+
+OPTIONS
+
+I didn't bother implementing them as comand line options, so pyqscore.py
+itself has to be edited to change them. However, once the user is happy
+with the output, there shouldn't be any need to touch anything again.
+
+TK_WINDOW = True
+# Launch a Tkinter open file dialog to input log file (True/False)
+
+MOVE_HTML_OUTPUT = True
+# If True, the output file will be moved to directory html_files
+# This may be convenient for some people, as it will avoid problems
+# with the CSS file and icons missing.
+
+MAXPLAYERS = 150
+# Maximum number of players displayed in HTML output
+
+SORT_OPTION = 'won_percentage'
+# How to sort table columns. Options: deaths, frag_death_ratio,
+# frags, games, ping, time, won, won_percentage
+
+BAN_LIST = [ 'UnnamedPlayer' , 'a_player_I_dont_like' ]
+# Comma-separated list containing the nicks of undesired players.
+# Nicks must include the colour codes and be inside quotes. 
+
+MINPLAY = 0.5
+# From 0 to 1, minimum fraction of time a player has to play in a game
+# relative to that of the player who played for longer in order to appear
+# in the statistics. Example: Player A is the first player joining a
+# match. The match lasts for 10 minutes. If MINPLAY is 0.7, only the
+# statistics of players who joined during the first 3 minutes will count.
+
+NUMBER_OF_QUOTES = 5
+# Number of random quotes displayed
+
+OPEN_BROWSER = True
+# Open browser when finished (True/False)
+
+DUMP_DATA = ''
+# Dump processed data to file in JSON format by setting this to 'yes'
+
+GTYPE_OVERRIDE = ''
+
+GTYPE_OVERRIDE = ''
+# If you have a mixed log with different game types, this will override
+# the game type read from the log. You can type what you want here.
+
+DISPLAY_CTF_TABLE = True
+# Display or not the CTF table in the HTML output. This will only work
+# if there are players with CTF-related data (True/False)
+
+
+SOME NOTES
+
+- pyqscore only considers events taking place during a game that reached
+completion. Also, it ignores stuff from the warmup period.
+
+- Suicides are self-frags inflicted with a weapon.
+
+- Deaths Falling are world frags, including falls, lava, acid, etc.
+
+- Player frags are the absolute number of frags from each player, i.e.,
+suicides and falls do not subtract anything (unlike what happens in-game).
+This is a feature.
+
+- pyqscore writes a cache file once it finishes processing a log. On
+subsequent runs, pyqscore looks for the existence of a cache file with
+the right name. If present, it then compares the size of the log file with
+that stored in the cache from the previous run. If it finds that the log
+file has increased in size, it uses the cached data to speed things up.
+If the log file has apparently shrinked, pyqscore assumes the log has
+been overwritten by a new one and discards the cache.
+
+- pyqscore may be messy, but it's well commented (I think), and some
+changes to modify its behaviour should be absolutely trivial to implement.
+
+- If somebody doesn't like its output but find the parser OKish, pyqscore
+can be asked to dump a JSON file (DUMP_DATA='yes') with the intermediate
+data obtained from the parsing loop. That file should be fairly easy to
+process to taste from any language known to humanity.
+
+- Original pyqscore thread in the OpenArena forum:
+
+  http://openarena.ws/board/index.php?topic=4151.0
+
+- An OpenArena server using pyqscore to display statistics (with a sexy 
+  modified theme):
+
+  http://linuxiuvat.de/stats/oa/monthly.htm
+
+- The look of the displayed HTML can be trivially modified by editing
+  the CSS file
+
+
+THANKS TO
+
+ONAK for the HTML file.
+JockeTF for his Python help.
+Akts^Itachi and Apo for pointing out bugs (and suggesting the solution!)
+Also, Apo must be the only serious user of pyqscore, and I believe he 
+blogged about it!
+The OpenArena team for a) the game, b) the icons I nicked.
+
+
+COPYING
+
+GNU Public License version 2. See file 'COPYING'.
+
+
+HARASSMENT
+
+I can be contacted via the Rainbow Networks forum:
+
+http://rainbow.furver.se/

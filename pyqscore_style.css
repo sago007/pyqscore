@@ -1,0 +1,440 @@
+/* características base genéricas */
+* {
+margin-top: 0px;
+margin-right: 0px;
+margin-bottom: 0px;
+margin-left: 0px;
+padding-top: 0px;
+padding-right: 0px;
+padding-bottom: 0px;
+padding-left: 0px;
+border-width: thin;			/* thin | medium | thick | <length> */
+border-color: #000000;		/* <color> | transparent | inherit */
+border-style: none;			/* none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset */
+border-collapse: collapse;
+/* border-top-width, border-right-width, border-bottom-width, border-left-width */
+/* border-top-color, border-right-color, border-bottom-color, border-left-color */
+/* border-top-style, border-right-style, border-bottom-style, border-left-style */
+color: #000000;				/* foreground color */
+background-color: transparent;	/* <color> | transparent | inherit */
+font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;	/* [ <family-name> | <generic-family> ] */
+font-style: normal;			/* normal | italic | oblique | inherit */
+font-variant: normal;		/* normal | small-caps */
+font-weight: normal;		/* normal | bold | bolder | lighter | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | inherit */
+font-size: 10pt;			/* <absolute-size> | <relative-size> | <length> | <percentage> | inherit */
+text-indent: 0px;			/* justificación de la primera línea de un párrafo */ 
+text-align: left;			/* left | right | center | justify | inherit */
+text-decoration: none;		/* none | [ underline || overline || line-through || blink ] | inherit */
+text-transform: none;		/* capitalize | uppercase | lowercase | none | inherit */
+letter-spacing: normal;		/* normal | <length> | inherit */
+word-spacing: normal;		/* normal | <length> | inherit */
+white-space: normal;		/* normal | pre | nowrap | pre-wrap | pre-line | inherit */
+list-style-type: disc;		/* disc | circle | square | decimal | decimal-leading-zero | lower-roman | upper-roman | lower-greek | lower-latin | upper-latin | armenian | georgian | lower-alpha | upper-alpha | none | inherit */
+list-style-image: none;		/* <uri> | none | inherit */
+list-style-position: outside;	/* inside | outside | inherit */
+}
+
+/* cuerpo del html */
+body {
+background-color: #CCCCFF;			/* <color> | transparent | inherit */
+/* background-image: url("imagenes/fondo.gif");*/	/* <uri> | none | inherit */
+/* background-repeat: no-repeat;*/		/* repeat | repeat-x | repeat-y | no-repeat | inherit */
+/* background-attachment: fixed;*/		/* scroll | fixed | inherit */
+/* background-position: 0px 0px;*/		/* [ [ <percentage> | <length> | left | center | right ] [ <percentage> | <length> | top | center | bottom ]? ] | [ [ left | center | right ] || [ top | center | bottom ] ] | inherit */
+/* cursor: url("statscursor.cur"), auto;*/		/* [ [<uri> ,]* [ auto | crosshair | default | pointer | move | e-resize | ne-resize | nw-resize | n-resize | se-resize | sw-resize | s-resize | w-resize | text | wait | help | progress ] ] | inherit */
+}
+
+/* links genéricos */
+.genericlink:link {
+text-decoration: none;
+background-color: transparent;
+color: #0000AA;
+}
+.genericlink:visited {
+text-decoration: none;
+background-color: transparent;
+color: #0000AA;
+}
+.genericlink:hover {
+text-decoration: none;
+background-color: transparent;
+color: #AA0000;
+}
+.genericlink:active {
+text-decoration: none;
+background-color: transparent;
+color: #0000AA;
+}
+
+/* id del marco de trabajo */
+#marco {
+display: inline;			/* inline | block | list-item | run-in | inline-block | table | inline-table | table-row-group | table-header-group | table-footer-group | table-row | table-column-group | table-column | table-cell | table-caption | none | inherit */
+position: absolute;			/* static | relative | absolute | fixed | inherit */
+width: auto;				/* <length> | <percentage> | auto | inherit */
+height: auto;				/* <length> | <percentage> | auto | inherit */
+top: 0px;					/* <length> | <percentage> | auto | inherit */
+right: auto;				/* <length> | <percentage> | auto | inherit */
+bottom: auto;				/* <length> | <percentage> | auto | inherit */
+left: 0px;					/* <length> | <percentage> | auto | inherit */
+float: none;				/* left | right | none | inherit */
+clear: none;				/* none | left | right | both | inherit */
+margin-top: 10px;
+margin-right: 20px;
+margin-bottom: 20px;
+margin-left: 20px;
+}
+
+
+/* presentación */
+
+.cuadropresentacion {
+background-color: #3366CC;
+padding-top: 15px;
+padding-bottom: 15px;
+margin-bottom: 5px;
+}
+
+.intro {
+color: #FFFFFF;
+padding-left: 80px;
+margin-bottom: 15px;
+font-family: Verdana, Tahoma, Arial, sans-serif;
+font-weight: bold;
+font-size: 20pt;
+}
+
+.update {
+float: right;
+color: #FFFFFF;
+margin-right: 70px; 
+padding-top: 10px;
+font-family: Verdana, Tahoma, Arial, sans-serif;
+font-size: 9pt;
+font-style: italic;
+}
+
+
+.endnote {
+float: right;
+color: #000000;
+margin-right: 10px; 
+padding-top: 0px;
+padding-bottom: 15px;
+font-family: Verdana, Tahoma, Arial, sans-serif;
+font-size: 9pt;
+font-style: italic;
+}
+
+
+/* id del cuerpo */
+
+.cuadro {
+background-color: #6699FF;
+border-color: #3366CC;		/* <color> | transparent | inherit */
+border-style: solid;		/* none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset */
+margin-top: 0px;
+margin-right: 0px;
+margin-left: 0px;
+margin-bottom: 10px;
+padding-top: 5px;
+padding-bottom: 15px;
+padding-right: 15px;
+padding-left: 15px;
+}
+
+.titulocuadro {
+color: #003399;
+font-size: 12pt;
+font-family: Verdana, Tahoma, Arial, sans-serif;
+font-weight: bold;
+margin-top: 15px;
+margin-left: 50px;
+}
+
+
+/* tablas */
+
+.centrartabla {
+text-align: center;
+}
+
+.centrartabla table {
+margin-top: 0px;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 0px;
+}
+
+.centrartabla2 table {
+margin-top: 20px;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 0px;
+}
+
+.tablaserver {
+background-color: #FFFFFF;
+border-color: #3366CC;
+border-style: solid;
+border-width: 3px;
+}
+
+.tabladatos {
+background-color: #FFFFFF;
+border-color: #3366CC;
+border-style: solid;
+margin-top: 20px;
+}
+
+
+/* datos tabla server */
+
+.server {
+background: #CCCCFF;/*#f0f0f0;*/
+color: #000000;
+padding-top: 8px;
+padding-right: 20px;
+padding-bottom: 8px;
+padding-left: 10px;
+font-family: Verdana, Tahoma, Arial, sans-serif;
+font-size: 8pt;
+font-weight: bold;
+text-align: left;
+/* border-bottom-color: #3366CC; */
+/* border-bottom-style: groove; */
+/* border-bottom-width: 4px; */
+}
+
+.datoserver {
+background: #ccccff; /*#f0f0f0;*/
+color: #000000;
+padding-top: 8px;
+padding-right: 10px;
+padding-bottom: 8px;
+padding-left: 0px;
+font-family: Verdana, Tahoma, Arial, sans-serif;
+font-size: 8pt;
+text-align: left;
+/* font-weight: bold; */
+/* border-bottom-color: #3366CC; */
+/* border-bottom-style: groove; */
+/* border-bottom-width: 4px; */
+/* border-right-color: #3366CC; */
+/* border-right-style: groove; */
+/* border-right-width: 4px; */
+}
+
+
+
+/* datos tabla de datos */
+
+.jugadorquotes {
+background: #eeeeff;
+color: #000000;
+margin-top: 0px;
+margin-left: 0px;
+margin-right: 0px;
+margin-bottom: 0px;
+padding-top: 1px;
+padding-right: 10px;
+padding-left: 6px;
+padding-bottom: 1px;
+font-family: Verdana, Tahoma, Arial, sans-serif;
+font-size: 8pt;
+text-align: left;
+border-top-color: #6699FF;
+/* border-top-style: dashed; */
+border-top-width: 1px;
+}
+
+.datoquotes {
+min-width: 500px;
+background: #eeeeff;
+color: #000000;
+margin-top: 0px;
+margin-left: 0px;
+margin-right: 0px;
+margin-bottom: 0px;
+padding-top: 1px;
+padding-left: 10px;
+padding-right: 6px;
+padding-bottom: 1px;
+font-family: Verdana, Tahoma, Arial, sans-serif;
+font-size: 8pt;
+font-style: italic;
+text-align: center;
+border-top-color: #6699FF;
+/* border-top-style: dashed; */
+border-top-width: 1px;
+}
+
+
+.tituloup {
+color: #000000;
+margin-top: 5px;
+margin-left: 5px;
+margin-right: 5px;
+margin-bottom: 0px;
+font-family: Verdana, Tahoma, Arial, sans-serif;
+font-size: 8pt;
+font-weight: bold;
+text-align: center;
+}
+
+.tituloup2 {
+background: #ccccff;
+color: #000000;
+margin-top: 0px;
+margin-left: 0px;
+margin-right: 0px;
+margin-bottom: 0px;
+padding-top: 3px;
+padding-bottom: 3px;
+font-family: Verdana, Tahoma, Arial, sans-serif;
+font-size: 8pt;
+font-weight: bold;
+text-align: center;
+}
+
+.tituloup3 {
+color: #000000;
+margin-top: 0px;
+margin-left: 5px;
+margin-right: 5px;
+margin-bottom: 3px;
+font-family: Verdana, Tahoma, Arial, sans-serif;
+font-size: 8pt;
+font-weight: bold;
+text-align: center;
+}
+
+
+.tituloup4 {
+color: #000000;
+margin-top: 8px;
+margin-left: 5px;
+margin-right: 5px;
+margin-bottom: 8px;
+font-family: Verdana, Tahoma, Arial, sans-serif;
+font-size: 8pt;
+font-weight: bold;
+text-align: center;
+}
+
+.jugador {
+background: #CCCCff;
+color: #000000;
+margin-top: 1px;
+margin-left: 0px;
+margin-right: 0px;
+margin-bottom: 0px;
+padding-top: 1px;
+padding-right: 0px;
+padding-bottom: 1px;
+padding-left: 6px;
+font-family: Verdana, Tahoma, Arial, sans-serif;
+font-size: 8pt;
+text-align: left;
+}
+
+.jugador2 {
+background: #eeeeff;
+color: #000000;
+margin-top: 1px;
+margin-left: 0px;
+margin-right: 0px;
+margin-bottom: 0px;
+padding-top: 1px;
+padding-right: 0px;
+padding-bottom: 1px;
+padding-left: 6px;
+font-family: Verdana, Tahoma, Arial, sans-serif;
+font-size: 8pt;
+text-align: left;
+}
+
+.dato {
+background: #CCCCff;
+color: #000000;
+margin-top: 1px;
+margin-left: 0px;
+margin-right: 0px;
+margin-bottom: 0px;
+padding-top: 1px;
+padding-right: 0px;
+padding-bottom: 1px;
+padding-left: 0px;
+font-family: Verdana, Tahoma, Arial, sans-serif;
+font-size: 8pt;
+text-align: center;
+}
+
+.dato2 {
+background: #eeeeff;
+color: #000000;
+margin-top: 1px;
+margin-left: 0px;
+margin-right: 0px;
+margin-bottom: 0px;
+padding-top: 1px;
+padding-right: 0px;
+padding-bottom: 1px;
+padding-left: 0px;
+font-family: Verdana, Tahoma, Arial, sans-serif;
+font-size: 8pt;
+text-align: center;
+}
+
+
+div.centered 
+{
+text-align: center;
+}
+div.centered table 
+{
+margin: 0 auto; 
+text-align: left;
+}
+
+/* player name colours */
+
+.c0 {
+font-family: Verdana, Tahoma, Arial, sans-serif;
+font-size: 8pt;
+color: #000000;
+}
+.c1 {
+font-family: Verdana, Tahoma, Arial, sans-serif;
+font-size: 8pt;
+color: #FF0000;
+}
+.c2 {
+font-family: Verdana, Tahoma, Arial, sans-serif;
+font-size: 8pt;
+color: #00FF00;
+}
+.c3 {
+font-family: Verdana, Tahoma, Arial, sans-serif;
+font-size: 8pt;
+color: #FFFF00;
+}
+.c4 {
+font-family: Verdana, Tahoma, Arial, sans-serif;
+font-size: 8pt;
+color: #0000FF;
+}
+.c5 {
+font-family: Verdana, Tahoma, Arial, sans-serif;
+font-size: 8pt;
+color: #00FFFF;
+}
+.c6 {
+font-family: Verdana, Tahoma, Arial, sans-serif;
+font-size: 8pt;
+color: #FF00FF;
+}
+.c7 {
+font-family: Verdana, Tahoma, Arial, sans-serif;
+font-size: 8pt;
+color: #FFFFFF;
+}
