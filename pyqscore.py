@@ -17,8 +17,8 @@
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 __author__    = "Jose Rodriguez"
-__version__   = "1.0"
-__date__      = "16-03-2014"
+__version__   = "1.0.1"
+__date__      = "19-11-2015"
 __license__   = "GPLv2"
 __copyright__ = "Copyright (C) 2011  Jose Rodriguez"
 
@@ -221,6 +221,8 @@ def mainProcessing(log):
             game, server = lineProcInit(line, game, server)
             game, server, valid_game = oneGameProc(lines, game, server)
             if valid_game == True:
+                if len(game.players) == 0:
+                    continue
                 server.time = server.time + game.time - min(game.ptime.values())
                 cgames.append(game)               # Append game to list of games
     return server, cgames

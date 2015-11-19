@@ -12,3 +12,8 @@
 
 - Created a sensible dir structure to put html files into automatically
 
+
+19/11/2015
+
+- Fixed bug whereby empty games would not be ignored causing parsing to fail 
+(thanks to LBS for reporting it in the OpenArena forum)
