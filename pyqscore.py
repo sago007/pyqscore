@@ -39,7 +39,7 @@ from random import randint
 
 #=======================         OPTIONS         ======================= #
 
-TK_WINDOW = True
+TK_WINDOW = False
 # Launch a Tkinter open file dialog to input log file (True/False)
 
 MOVE_HTML_OUTPUT = True
@@ -754,7 +754,7 @@ def apply_ban(R, BAN_LIST):
 
 def name_colour(nick):
     '''Parse Quake colour codes to HTML (uses pyqscores' CSS stylesheet).'''
-    for n in range(8):
+    for n in range(9):
         code = '^' + str(n)
         html_code = '<SPAN class="c' + str(n) + '">'
         if nick.rfind(code) > -1:
