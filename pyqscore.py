@@ -39,7 +39,7 @@ from random import randint
 
 #=======================         OPTIONS         ======================= #
 
-TK_WINDOW = False
+TK_WINDOW = True
 # Launch a Tkinter open file dialog to input log file (True/False)
 
 MOVE_HTML_OUTPUT = True
@@ -1195,6 +1195,8 @@ def main(log_file=None):
     open_browser(OPEN_BROWSER, html_file_new)
 
 if __name__ == '__main__':
+    if len(sys.argv) > 1:
+        TK_WINDOW = False
     if TK_WINDOW is True:
         options = {'filetypes':[('log files', '*.log')]}
         logfile = tkFileDialog.askopenfilename(**options)
